@@ -2,7 +2,7 @@
   "name": "GodotExplorer",
   "namespace": "otDan",
   "version_number": "1.0.0",
-  "description": "Generic Godot mod for scene exploring at runtime",
+  "description": "通用 Godot 模组：在运行时浏览场景节点树。",
   "website_url": "https://github.com/otDan/GodotExplorer",
   "dependencies": [],
   "extra": {

@@ -42,9 +42,9 @@ select_mode = 1
 margin_top = 576.0
 margin_right = 400.0
 margin_bottom = 600.0
-hint_tooltip = "Search Through Scene Nodes"
+hint_tooltip = "在场景节点中搜索"
 align = 3
-placeholder_text = "Type Node Name..."
+placeholder_text = "输入节点名称…"
 caret_blink = true
 
 [connection signal="text_changed" from="SceneNavigatorCanvas/SceneNavigatorWindow/VBoxContainer/SearchNode" to="." method="_on_SearchNode_text_changed"]

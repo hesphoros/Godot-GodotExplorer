@@ -9,7 +9,7 @@ const MOD_NAME = "otDan-GodotExplorer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SceneDisplayerWindow.window_title = "Scene Navigator Tree" #+ str(self.get_instance_id())
+	SceneDisplayerWindow.window_title = "场景导航树" #+ str(self.get_instance_id())
 	setup_scene_displayer()
 	_update_node_tree()
 	get_tree().connect("node_added", self, "_on_node_added")
@@ -69,7 +69,7 @@ func _node_tree_remove(node: Node):
 		var treeItem: TreeItem = sceneDisplayerDictionary[nodeId]
 		var erased = sceneDisplayerDictionary.erase(nodeId)
 		if (!erased):
-			ModLoaderUtils.log_warning("Tried to remove a node that is not present in the dictionary", MOD_NAME)
+			ModLoaderUtils.log_warning("尝试移除字典中不存在的节点", MOD_NAME)
 		treeItem.free()
 
 func _update_node_tree():
@@ -86,9 +86,9 @@ func get_all_children(root: Node, level: int = 0):
 				get_all_children(node, _level + 1)
 
 func setup_scene_displayer():
-	sceneTree.set_column_title(0, "Name")
-	sceneTree.set_column_title(1, "Type")
-	sceneTree.set_column_title(2, "Instance")
+	sceneTree.set_column_title(0, "名称")
+	sceneTree.set_column_title(1, "类型")
+	sceneTree.set_column_title(2, "实例")
 	sceneTree.set_column_min_width(0, 125)
 	sceneTree.set_column_min_width(1, 95)
 	sceneTree.set_column_min_width(2, 75)
@@ -100,7 +100,7 @@ func setup_scene_displayer():
 	sceneTree.anchor_bottom = 1
 
 	sceneDisplayerRoot = sceneTree.create_item()
-	sceneDisplayerRoot.set_text(0, "SceneDisplayer")
+	sceneDisplayerRoot.set_text(0, "场景根")
 	sceneDisplayerDictionary[get_tree().get_root().get_instance_id()] = sceneDisplayerRoot
 
 func _unhandled_input(_ev):
